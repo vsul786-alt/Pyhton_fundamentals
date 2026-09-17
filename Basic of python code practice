@@ -1,0 +1,83 @@
+from idlelib.sidebar import temp_enable_text_widget
+
+print("Hello World")
+#Indendation - alignment based prog/block base org
+box = 'pen'
+print(box)
+print(type(box))
+
+if box == 'pen':
+    print('it is a stationary box')
+    print('i can use this box to keep pencil also')
+#print("i can use this box to keep rubber also")#out of if block
+#print("i can use this box to keep eraser also")
+else:
+    print("some other box")
+print(type(box))
+
+if box == 'Remote':
+    print('it is a electornic box')
+    print('i can use this box to keep mobile,calculator also')
+print(type(box))
+aspirants_list=['Gopinath','Karthikeyan','Saravanan','Viji']
+for aspirants in aspirants_list:
+    print("good morning ",aspirants)
+print("good morning rest of all aspirants")
+#usage of quotes
+#name = 'this is uvaraj's note book' # error
+#print(name)
+name = 'this is uvaraj "note" book'
+print(name)
+name = "this is uvaraj's note book"
+print(name)
+name = """this is uvaraj's "note" book"""
+print(name)
+name = '''this is uvaraj's "note" book'''
+print(name)
+name = "this is uvaraj's note book"
+print(name)
+name = 'this is uvaraj"s note book'
+print(name)
+name = """this is uvaraj's note "book" """
+print(name)
+name='this is Irfan\'s mobile'
+print(name)
+
+#Below is bit complex to manage multi lines
+statements=("hello team\n"
+            "good morning\n"
+            "how are you\n")
+print(statements)
+
+#Python treats single quotes the same as double quotes as like triple quotes, but has some differences
+company1='inceptez'
+company2="inceptez"
+company3="""inceptez"""
+print(company1,company2,company3)#python treat all as same
+#Then why 3 notations?
+#Double quotes is used for holding single quoted chars
+#company1='inceptez's'#this will not work
+company1="this is inceptez's property"
+#vice versa - single inside double quotes
+company2='This is "inceptez" company'
+#Triple quotes (either '''/""") place very important roles
+#For holding both single, double quoted data we can use triple quotes
+company3="""This is "inceptez's" company's property"""
+print(company1,company2,company3)#Hover the print function to understand how we can use comments with """
+#Variables & Naming convention
+#Python - dynamic inference, dynamic typed & strongly typed lang
+
+#dynamic inference
+
+a=10
+print(a)
+print(type(a))
+#dynamic typed lang - Type can change later (duck lang)
+a='ten'
+print(a)
+print(type(a))
+
+#strongly typed lang- operation between two different type (of different hierarchy) is not possible
+a=10# number int family
+b='twenty'#str family
+print(a+b)#fail
