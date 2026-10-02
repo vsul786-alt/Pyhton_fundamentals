@@ -1,5 +1,3 @@
-from idlelib.sidebar import temp_enable_text_widget
-
 print("Hello World")
 #Indendation - alignment based prog/block base org
 box = 'pen'
@@ -81,3 +79,193 @@ print(type(a))
 a=10# number int family
 b='twenty'#str family
 print(a+b)#fail
+#Python Data Types
+#Simple, Complex/Collection & Misc types.
+
+#Simple type
+#String type: INDEXED SEQUENCED, this type is ITERABLE(LOOPING), Immutable(non updatable)
+my_name = 'uvaraj vs'
+print(my_name[0])
+print(my_name[-1])
+print(my_name[-3])
+print(type(my_name))
+print(my_name.capitalize())
+print(my_name.title())
+print(my_name.lower())
+print(my_name.upper())
+
+#Iterable (loopable)
+for letter in my_name:
+    print(letter)
+    print(letter.isalpha())
+    print(letter.isdigit())
+    print(letter.isalnum())
+    print(letter.isspace())
+    print(letter.istitle())
+    print(letter.isupper())
+    print(letter.islower())
+    print(letter.isnumeric())
+    print(letter.isdecimal())
+
+#for i in 100:#this will throw error, since number is not iterable
+#    print(i)
+
+#Immutable (not updatable)
+#my_name[0]='M'#Doesn't work, because str is immutable
+#Simple type
+#Number Type: (int,float,complex number)
+#String type: NOT an INDEXED SEQUENCED, NOT ITERABLE(LOOPING), Immutable(non updatable)
+age=43
+print(age)
+print(type(age))
+
+#float data type (alternative for float is decimal, double - these types are not directly available in python)
+height=5.11 #Datatype is float - scale & precision for fraction numbers
+print(height)
+print(type(height))
+print(height*2)
+
+#complex type: not much improtant
+circuit_frequency=5+4j#complex number with real + imaginary jewel part
+print(circuit_frequency)
+print(type(circuit_frequency))
+print(circuit_frequency.real)
+print(circuit_frequency.imag)
+
+#Simple Type:
+#Boolean Type : Very very important type used for making decisions.
+# Logical output type produced when you perform comparison/binary or/and logical operations,
+# which stores only 2 values (True or False)
+a=10
+b=20
+print(a>b)#Comparison Return False
+print(a<b)#Return True
+print(type(a>b))#Print bool type
+
+print(a>b or b>a)#Logical Return True
+print(type(a>b or b>a))
+
+#Sequence/Complex/Collection Type:
+#To hold collection of values, not single value in a variable.
+#First cut understanding of complex types in python (just for the better learning of looping constructs)
+#4 collection types (set, tuples, dict, list), in an order of importance
+#1. list
+#2. dict
+#3. tuple
+#4. set
+
+#All complex/collection types are ITERABLE
+#1. list []- indexed sequenced collection of homogeneous(non mandatory) mutable items/elements.
+#                   0       1       2           3       4
+aspirants_list=['Uvaraj','Jamuna','Nathiya','Kalyani','Abi']
+aspirants_list.append('Ashima')
+print(aspirants_list)
+print(aspirants_list[0])#use index to select an element/item
+for i in aspirants_list:
+    print(i)
+
+#2. dict {key1:val1,key2:val2}- Non Indexed but Sequenced (because iterable) Collection of key & value pair.
+#not possible        0               1       2           3           4
+aspirants_dict={'Uvaraj':40,'Lakshmi':35,'Shanmuga priya':12,'Yougesh':8}
+print(aspirants_dict)
+print(aspirants_dict['Uvaraj'])#use key to select a value (because it is not indexed)
+for i in aspirants_dict.keys():
+   print(i)
+for i in aspirants_dict.values():
+   print(i)
+for i in aspirants_dict.items():
+   print(i)
+#3. Tuple () - Indexed Sequenced Collection of hetrogeneous (non mandatory) elements.
+aspirant_tuple1=('Uvaraj',31,'Chennai','IT Professional')
+aspirant_tuple2=('Jamuna',30,'Hyderabad','IT Professional')
+for i in aspirant_tuple1:
+    print(i)
+for i in aspirant_tuple2:
+    print(i)
+>>> list1=list(aspirant_tuple1) #To get horizantal output results convert tuple into list formate
+>>> print(list1)
+['Uvaraj', 31, 'Chennai', 'IT Professional']
+>>>
+>> set1={1, 20, 100, 4, 'x', 200, 10, 20}
+... print(set1)#deduplicated elements
+...
+{1, 10, 100, 4, 20, 200, 'x'}
+>>> set1={'Jamuna','Uvaraj','Sojiv'}
+... set2={'Tajamul','Uvaraj'}
+... print(set1)
+... print(set1)#deduplicated elements
+... print(set1.union(set2))#deduplicated union of both set elements
+... print(set1.difference(set2))#set1 minus set2 elements
+...
+{'Jamuna', 'Sojiv', 'Uvaraj'}
+{'Jamuna', 'Sojiv', 'Uvaraj'}
+{'Jamuna', 'Tajamul', 'Sojiv', 'Uvaraj'}
+{'Jamuna', 'Sojiv'}
+>>> set1={'Jamuna','Uvaraj','uvaraj','Sojiv'}
+... set2={'Tajamul','Uvaraj'}
+... print(set1)
+...
+{'Jamuna', 'Sojiv', 'uvaraj', 'Uvaraj'}
+>>> set1={'Jamuna','Uvaraj','Uvaraj','Sojiv'}
+... set2={'Tajamul','Uvaraj'}
+... print(set1)
+...
+{'Jamuna', 'Sojiv', 'Uvaraj'}
+>>> print(set1.union(set2))#deduplicated union of both set elements
+{'Jamuna', 'Tajamul', 'Sojiv', 'Uvaraj'}
+>>>
+KeyboardInterrupt
+>>>
+... print(set1.difference(set2))#set1 minus set2 elements
+{'Jamuna', 'Sojiv'}
+>>> list1=['Jamuna','Uvaraj','Sojiv','Jamuna','Uvaraj']
+>>> set1=set(list1)
+>>>
+>>>
+>>> set1=set(list1)
+>>> print(set1)
+{'Jamuna', 'Sojiv', 'Uvaraj'}
+>>> list1=list(set1)
+>>> print(list1)
+['Jamuna', 'Sojiv', 'Uvaraj']
+>>> list1=['Jamuna','Uvaraj','Sojiv','Jamuna','Uvaraj']#list1=not able to deduplicate have to convert in the set to deduplicate
+>>> print(list1)
+['Jamuna', 'Uvaraj', 'Sojiv', 'Jamuna', 'Uvaraj']
+#Misc types (None, range, bytes, memoryview)
+#None is an no/unknown/null type in python
+aspirants_count:int=None #Before 9AM, I am setting this aspirants count as none bcz i don't know how many will join today
+#At 9AM
+aspirants_count=55
+#At 9.10AM
+aspirants_count=75
+#At 9.30AM
+aspirants_count=99
+#At 12.30PM
+aspirants_count=86
+
+x=print("a")#print return none after printing the content in the screen (output device)
+print(x)
+
+#range is a iterable type returned as an output of a range function that help us generate range of values
+# with starting, until(end) and increments
+
+ rng:range=range(10)
+... print(rng)
+... print(list(rng))
+... print(type(rng))
+... print(list(range(0,11,2)))
+
+#Bytes type is used to hold data in bytecode/encoded format
+#Every data passed through network or memory or stored in disk are converted to objects for security, performance etc.,
+age=43
+byteformat=bytes(age)
+print(byteformat)
+memoryview1=memoryview(byteformat)
+print(memoryview1)
+
+name='Uvaraj'
+byteformat=name.encode()
+print(byteformat)
+memoryview1=memoryview(byteformat)
+print(memoryview1)
+print(type(memoryview1))
