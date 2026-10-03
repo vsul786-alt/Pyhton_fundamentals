@@ -1,0 +1,97 @@
+A. Python is an indent based programming language
+The following program throws an indentation error. Correct it and make sure it prints properly.
+
+teams = ['Data', 'AI', 'DevOps']
+for t in teams:
+print('Hello', t, 'Team from Inceptez Technologies')
+  print('Keep Learning and Exploring!')
+
+Corrected codes : 
+
+teams = ['Data', 'AI', 'DevOps']
+for t in teams:
+    print('Hello', t, 'Team from Inceptez Technologies')
+print('Keep Learning and Exploring!')
+
+output Results : 
+Hello Data Team from Inceptez Technologies
+Hello AI Team from Inceptez Technologies
+Hello DevOps Team from Inceptez Technologies
+Keep Learning and Exploring!
+
+H. Python Operators Usecases
+
+Use Case 3 (Bug Fixing): Logical and Comparison Operator Errors
+The following code should determine voting eligibility, but it contains operator mistakes. Fix it.
+Incorrect code:
+age = input("Enter age: ")
+ citizen = input("Are you an Indian citizen? (yes/no)")
+if age > "18" and citizen = "yes":
+ print("Eligible to vote")
+ else:
+ print("Not eligible")
+
+Corrected codes :
+age = input("Enter age: ")
+citizen = input("Are you an Indian citizen? (yes/no)")
+if age >= '18' and citizen.lower() == "yes":
+    print("Eligible to vote")
+else:
+    print("Not eligible")
+
+I. Conditional Structure
+
+Write a program that asks the user for:
+Age
+Monthly income
+
+#Use Case 1: Banking Eligibility Check
+'''
+Conditions:
+If age < 18: print "Not eligible for a bank account."
+If age >= 18 and income < 15000: print "Eligible for basic savings account."
+If age >= 18 and income between 15000 and 50000: print "Eligible for savings + salary account."
+If age >= 18 and income > 50000: print "Eligible for premium account."
+'''
+
+age = int(input("Enter_age"))
+Mon_income = int(input("Enter income"))
+#Print(age)
+#print(Mon_income):
+if age < 18:
+    print("Not eligible for a bank account.")
+elif age >= 18 and Mon_income < 15000:
+    print ("Eligible for basic savings account.")
+elif age >= 18 and 15000 <= Mon_income <= 50000:
+    print ("Eligible for savings + salary account.")
+else:
+    print ("Eligible for premium account.")
+
+#Use Case 2: Check room availability
+room_available = input("Is room available? (yes/no): ").lower()=="yes"
+is_vip = input("Is guest VIP? (yes/no): ").lower()=="yes"
+membership_years = int(input("Membership years: "))
+if room_available:
+    if is_vip:
+        print("Room available. Offer complimentary upgrade.")
+    elif membership_years >=5:
+        print("Room available. Offer discount.")
+    else:
+        print("Room available. standard price.")
+else:
+    print ("No room available")
+#%%
+def check_room_availability(room_available, is_vip, membership_years):
+    if room_available:
+        if is_vip:
+            print("Room available. Offer complimentary upgrade.")
+        elif membership_years >= 5:
+            print("Room available. Offer discount.")
+        else:
+            print("Room available. Standard price.")
+    else:
+        print("No rooms available.")
+check_room_availability(True, True, 2)
+check_room_availability(True, False, 6)
+check_room_availability(True, False, 2)
+check_room_availability(False,False,3)
