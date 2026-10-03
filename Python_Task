@@ -80,7 +80,7 @@ if room_available:
         print("Room available. standard price.")
 else:
     print ("No room available")
-#%%
+#Use Case 2: Check room availability (Alternate senario)
 def check_room_availability(room_available, is_vip, membership_years):
     if room_available:
         if is_vip:
@@ -95,3 +95,12 @@ check_room_availability(True, True, 2)
 check_room_availability(True, False, 6)
 check_room_availability(True, False, 2)
 check_room_availability(False,False,3)
+
+#Use Case 3 (Bug Fixing): Nested Condition Logic Issue (Indendation  error & after else statement : missing (Index error)
+temp = input("Enter body temperature in Celsius: ")
+if temp < "37":
+    print("Normal temperature")
+elif temp > "37" and temp < "39":
+    print("Fever")
+else: 
+    print("High fever")
